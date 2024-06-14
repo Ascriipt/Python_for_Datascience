@@ -55,9 +55,9 @@ def valid_char():
 def main():
     valid_char()
     decoded = [NESTED_MORSE[x.upper()]
-               for x in argv[1] if x.islower() or x == " " or x.isdigit()]
-    for x in decoded:
-        print(x, end=" ")
+               for x in argv[1] if x.islower() or
+               x.isupper() or x == " " or x.isdigit()]
+    print(*decoded)
 
 
 if __name__ == "__main__":
