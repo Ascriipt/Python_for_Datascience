@@ -1,8 +1,5 @@
 import sys
 import ft_filter
-"""
-    importing my filter function
-"""
 
 
 argv = sys.argv

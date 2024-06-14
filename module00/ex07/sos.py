@@ -1,7 +1,4 @@
 import sys
-"""
-    importing argv from sys
-"""
 
 
 argv = sys.argv
