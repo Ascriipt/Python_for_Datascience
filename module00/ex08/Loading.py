@@ -1,3 +1,4 @@
+import sys
 import time
 import shutil
 
@@ -27,6 +28,7 @@ def ft_tqdm(lst: range) -> None:
     total = len(lst)
     start = time.time()
 
+    terminal_width = shutil.get_terminal_size().columns
     full_width = shutil.get_terminal_size().columns - 30
     tqdm_width = full_width - 10
 
@@ -43,5 +45,14 @@ def ft_tqdm(lst: range) -> None:
         progress_percentage = progress * 100 // tqdm_width
         progress_info = f"{progress_percentage}%{progress_bar} {i}/{total}"
         time_info = f"[{elapsed_formatted}<{eta_formatted}, {speed:.2f}it/s]"
-        print(f"\r{progress_info} {time_info}", end="", flush=True)
+        line_length = len(f"\r{progress_info} {time_info}")
+        if line_length > terminal_width:
+            tset = terminal_width - line_length
+            progress_bar_content = '█' * progress
+            progress_bar = f"|{progress_bar_content:<{tset}}|"
+            # progress_info = progress_info[:terminal_width - len(time_info) - 1]
+            # progress_info = progress_info.rstrip()
+        sys.stdout.write('\r' + ' ' * terminal_width + '\r')
+        sys.stdout.write(f"\r{progress_info} {time_info}")
+        sys.stdout.flush()
         yield val
