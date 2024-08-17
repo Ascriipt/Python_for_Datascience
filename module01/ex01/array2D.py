@@ -1,6 +1,11 @@
 def slice_me(family: list, start: int, end: int) -> list:
+	if not isinstance(family, list) :
+		raise TypeError(f"Family is of type : {type(family)}, and should be of type : list.")
 	if len(family) < 1 :
-		raise ValueError;
+		raise ValueError("Family appears very empty :'(.");
+	for i in family :
+		if len(i) != len(family[0]) :
+			raise TypeError("One or multiple values are of different sizes.")
 	print(f"My shape is : ({len(family)}, {len(family[0])})");
 	print(f"My new shape is : ({len(family[start:end])}, {len(family[start:end][0])})")
 	print(family[start:end])
@@ -11,4 +16,7 @@ family = [[1.80, 78.4],
 		  [2.10, 98.5],
 		  [1.88, 75.2]]
 
-slice_me(family, 0, 2)
+try: 
+	slice_me(family, 0, 2)
+except Exception as e :
+	print(e)
