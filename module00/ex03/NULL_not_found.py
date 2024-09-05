@@ -9,7 +9,9 @@ def NULL_not_found(object: any) -> int:
     key = type(object)
     if object is None:
         print(f"{types[None]}{key}")
-    elif key in types:
+    elif key in types and not object:
+        print(f"{types[key]}{key}")
+    elif isinstance(object, float):
         print(f"{types[key]}{key}")
     else:
         print("Type not Found")
