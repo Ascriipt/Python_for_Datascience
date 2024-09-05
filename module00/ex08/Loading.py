@@ -50,7 +50,7 @@ def ft_tqdm(lst: range) -> None:
             tset = terminal_width - line_length
             progress_bar_content = '█' * progress
             progress_bar = f"|{progress_bar_content:<{tset}}|"
-            # progress_info = progress_info[:terminal_width - len(time_info) - 1]
+            # progress_info = progress_info[:terminal_width - len(time_info)-1]
             # progress_info = progress_info.rstrip()
         sys.stdout.write('\r' + ' ' * terminal_width + '\r')
         sys.stdout.write(f"\r{progress_info} {time_info}")

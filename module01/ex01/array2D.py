@@ -1,6 +1,4 @@
 def slice_me(family: list, start: int, end: int) -> list:
-	if not isinstance(family, list) :
-		raise TypeError(f"Family is of type : {type(family)}, and should be of type : list.")
 	if len(family) < 1 :
 		raise ValueError("Family appears very empty :'(.");
 	for i in family :

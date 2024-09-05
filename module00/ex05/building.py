@@ -1,14 +1,14 @@
 import sys
 
 
-argv = sys.argv
-
-
 def main():
     """
-    gets the arguments counts there elements and prints the result
+    gets the arguments counts their elements and prints the result
     """
+    argv = sys.argv
     punctuation = set("!\"#$%&'()*+,-./:;<=>?@[\\]^_`{|}~")
+    if len(argv) > 2:
+        raise AssertionError()
     if len(argv) > 1:
         print(f"The text contains {sum(1 for char in argv[1])} characters:")
         print(f"{sum(1 for char in argv[1] if char.isupper())} upper letters")
@@ -30,4 +30,7 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception:
+        print("AssertionError : Y'a une erreur connard.")
