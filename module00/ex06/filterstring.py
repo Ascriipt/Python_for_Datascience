@@ -1,15 +1,6 @@
 import sys
 import ft_filter
 
-def filterstring(tofilter: str, n: int):
-    """_summary_
-
-    Args:
-        tofilter (str): the string to parse
-        n (int): the length to filter
-    """
-
-
 
 def main():
     """_summary_
