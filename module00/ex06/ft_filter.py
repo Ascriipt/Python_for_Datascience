@@ -1,11 +1,4 @@
-import typing
-"""
-    importing 'typing'
-"""
-
-
-def ft_filter(func: typing.Callable[..., any],
-              iterated: typing.Iterable[any]) -> typing.Iterable[any]:
+def ft_filter(function, iterable):
     """_summary_
 
     Args:
@@ -15,4 +8,4 @@ def ft_filter(func: typing.Callable[..., any],
     Returns:
         typing.Iterable[any]: any iterable object
     """
-    return [x for x in iterated if func(x)]
+    return [x for x in iterable if function(x)]
