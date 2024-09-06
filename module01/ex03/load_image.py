@@ -2,6 +2,7 @@ from PIL import Image
 import matplotlib as plt
 import numpy as np
 
+
 def ft_load(path: str) -> list:
     try:
         if not path.lower().endswith(('.jpg', '.jpeg')):
