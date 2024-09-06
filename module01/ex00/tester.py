@@ -14,7 +14,5 @@ def main():
     print(apply_limit(bmi, 26))
 
 if __name__ == "__main__":
-    try :
-        main()
-    except RuntimeError as e :
-        print (f"Error: {e}")
+    main()
+

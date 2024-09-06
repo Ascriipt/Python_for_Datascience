@@ -18,7 +18,7 @@ def slice_me(family: list):
             for j in family[x]:
                 if len(j) != expected_sublength:
                     raise TypeError("Substring values are of different sizes.")
-        print("The shape of image is: (")
+        print("The shape of image is: (", end="")
         print(f"{len(family)}, {expected_length}, {expected_sublength})")
     except ValueError as e:
         print(f"ValueError: {e}")
@@ -26,6 +26,8 @@ def slice_me(family: list):
         print(f"TypeError: {e}")
     except AssertionError as e:
         print(f"AssertionError: {e}")
+    except Exception as e:
+        print(f"Error: {e}")
 
 
 def ft_load(path: str) -> list:
