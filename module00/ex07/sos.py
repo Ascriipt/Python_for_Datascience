@@ -1,8 +1,6 @@
 import sys
 
 
-argv = sys.argv
-
 NESTED_MORSE = {
     ' ': '/ ',
     'A': '.-',
@@ -44,7 +42,7 @@ NESTED_MORSE = {
 }
 
 
-def valid_char():
+def valid_char(argv : list):
     if not len(argv) == 2:
         raise AssertionError("the arguments are bad")
     else:
@@ -55,7 +53,8 @@ def valid_char():
 
 def main():
     try:
-        valid_char()
+        argv = sys.argv
+        valid_char(argv)
         decoded = [NESTED_MORSE[x.upper()]
                    for x in argv[1] if x.islower() or
                    x.isupper() or x == " " or x.isdigit()]
