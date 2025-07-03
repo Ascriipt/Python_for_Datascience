@@ -10,7 +10,7 @@ def main():
     """
     try:
         argv = sys.argv
-        if len(argv) < 3 or len(argv) > 3:
+        if len(argv) != 3:
             raise AssertionError("The arguments are bad")
         tofilter = argv[1]
         n = int(argv[2])
